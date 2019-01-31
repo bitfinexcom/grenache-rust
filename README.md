@@ -8,7 +8,6 @@ Internally, Grenache uses Distributed Hash Tables (DHT, known from Bittorrent) f
 
  - [Setup](#setup)
  - [Examples](#examples)
- - [API](#api)
 
 ## Setup
 
