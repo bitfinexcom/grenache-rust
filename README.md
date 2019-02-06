@@ -43,7 +43,7 @@ use std::{thread, time};
 fn main(){
     let service = "rest:net:util";
     let service_port = 31_337u16;
-    let api_url = "http://127.0.0.1:30000";
+    let api_url = "http://127.0.0.1:30001";
     let mut client = GrenacheClient::new(api_url);
     client.start_announcing(service, service_port ).unwrap();
     thread::sleep(time::Duration::from_secs(1));
