@@ -33,21 +33,21 @@ grape --dp 20002 --aph 40001 --bn '127.0.0.1:20001'
 
 ### Examples
 The following will annonce the `rest:net:util` service on port 31337 and then confirm that the service can be looked up using the `GrenacheClient` object.
+
 ```rust
 extern crate grenache_rust;
 
-use grenache_rust::GrenacheClient;
 use grenache_rust::Grenache;
+use grenache_rust::GrenacheClient;
 use std::{thread, time};
 
-fn main(){
+fn main() {
     let service = "rest:net:util";
     let service_port = 31_337u16;
     let api_url = "http://127.0.0.1:30001";
     let mut client = GrenacheClient::new(api_url);
-    client.start_announcing(service, service_port ).unwrap();
-    thread::sleep(time::Duration::from_secs(1));
-    println!("Service at: {}",client.lookup(service).unwrap());
+    client.start_announcing(service, service_port).unwrap();
+    println!("Service at: {:?}", client.attempt_lookup(service).unwrap());
     client.stop_announcing(service).unwrap();
 }
 ```
