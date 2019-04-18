@@ -288,7 +288,7 @@ mod tests {
         let service = "rest:net:util";
         let service_port = 31_337u16;
         let grape_ip = "127.0.0.1";
-        let api_port = "30000";
+        let api_port = "30001";
         let client = GrenacheClient::new(format!("http://{}:{}", grape_ip, api_port));
         let rhs = client.lookup(service).unwrap();
         assert_eq!(Value::Null, rhs[0]);
