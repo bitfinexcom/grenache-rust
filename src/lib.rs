@@ -156,8 +156,8 @@ impl GrenacheClient {
             result.is_err()
         } {
             thread::sleep(time::Duration::from_secs(period));
-            error!(
-                "Failed to announce {}. Retrying in {} seconds",
+            info!(
+                "Unable to announce {}. Retrying in {} seconds",
                 service, period
             );
         }
@@ -172,8 +172,8 @@ impl GrenacheClient {
             result.is_err() || Self::result_is_empty_array_or_error(&result)
         } {
             thread::sleep(time::Duration::from_secs(period));
-            error!(
-                "Failed to Lookup {}. Retrying in {} seconds",
+            info!(
+                "Unable to lookup {}. Retrying in {} seconds",
                 service, period
             );
         }
